@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Динамика анализов — Буньков С.А.</title>
+
+    <!-- ФАВИКОН (иконка во вкладке и на телефоне) — значок ДНК 🧬 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+
+    <title>Мой дашборд — Буньков С.А.</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
             background: #f8fafc;
@@ -40,18 +42,6 @@
             border-radius: 0 8px 8px 0;
             line-height: 1.5;
         }
-        .badge {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 600;
-            padding: 0.15rem 0.7rem;
-            border-radius: 30px;
-            letter-spacing: 0.3px;
-            margin-right: 0.4rem;
-            white-space: nowrap;
-        }
         .section-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -73,8 +63,6 @@
             line-height: 1.8;
             white-space: nowrap;
         }
-
-        /* --- Таблицы с горизонтальным скроллом на мобилках --- */
         .table-wrapper {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -84,7 +72,7 @@
         }
         table {
             width: 100%;
-            min-width: 620px; /* чтобы на телефоне скроллилась, а не сжималась до каши */
+            min-width: 620px;
             border-collapse: collapse;
             font-size: 0.82rem;
             background: white;
@@ -149,14 +137,9 @@
             text-align: center;
             touch-action: manipulation;
         }
-        .print-button:hover {
-            background: #0b2a4a;
-        }
-        .print-button:active {
-            transform: scale(0.97);
-        }
+        .print-button:hover { background: #0b2a4a; }
+        .print-button:active { transform: scale(0.97); }
 
-        /* --- Адаптация под телефон --- */
         @media (max-width: 700px) {
             body { padding: 0.5rem 0.2rem; }
             .container { padding: 1rem 0.6rem; }
@@ -172,7 +155,6 @@
             table { font-size: 0.6rem; min-width: 480px; }
             td, th { padding: 4px 4px; }
         }
-
         @media print {
             body { background: white; padding: 0.5cm; }
             .container { box-shadow: none; padding: 0.5cm; }
@@ -184,7 +166,7 @@
     </style>
 </head>
 <body>
-<div class="container" id="reportContainer">
+<div class="container">
 
     <h1>🧬 Клинико-лабораторная динамика</h1>
     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0.2rem 0 0.6rem 0; font-size: 0.9rem;">
@@ -197,7 +179,7 @@
         🎯 Цель мониторинга: контроль энергии, дефицитов, профилактика перетренированности
     </div>
 
-    <!-- ==================== 1 ==================== -->
+    <!-- 1. ОАК -->
     <div class="section-title">1. Общий анализ крови + ретикулоциты <span>ОАК</span></div>
     <div class="table-wrapper">
         <table>
@@ -214,7 +196,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> Анемии нет. Эритропоэз активный (ретикулоциты 1.5%). Гематокрит требует контроля АД и водного режима.</div>
 
-    <!-- ==================== 2 ==================== -->
+    <!-- 2. Железо -->
     <div class="section-title">2. Железный обмен <span>Ферритин</span></div>
     <div class="table-wrapper">
         <table>
@@ -229,7 +211,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> Запасы железа стабильны, но не достигают спортивной нормы. Требуется <strong>FIT-тест кала</strong> для исключения хронической кровопотери.</div>
 
-    <!-- ==================== 3 ==================== -->
+    <!-- 3. Воспаление -->
     <div class="section-title">3. Воспаление, печень, мышцы <span>Маркеры</span></div>
     <div class="table-wrapper">
         <table>
@@ -245,7 +227,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> Все маркеры вернулись в норму на фоне исключения алкоголя и приёма фосфолипидов.</div>
 
-    <!-- ==================== 4 ==================== -->
+    <!-- 4. Липиды -->
     <div class="section-title">4. Липидный профиль <span>Сердечно-сосудистый риск</span></div>
     <div class="table-wrapper">
         <table>
@@ -262,7 +244,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> ЛПНП снизился до 3.65, но цель &lt;3,0 не достигнута. Рекомендована консультация кардиолога.</div>
 
-    <!-- ==================== 5 ==================== -->
+    <!-- 5. Гормоны -->
     <div class="section-title">5. Гормональный профиль <span>Андрогены, стресс</span></div>
     <div class="table-wrapper">
         <table>
@@ -278,7 +260,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> Гормональный фон стабилен. Эстрадиол нормализовался. Перетренированности нет.</div>
 
-    <!-- ==================== 6 ==================== -->
+    <!-- 6. Витамины -->
     <div class="section-title">6. Витамины и микроэлементы <span>Нутриенты</span></div>
     <div class="table-wrapper">
         <table>
@@ -293,7 +275,7 @@
     </div>
     <div class="conclusion-box"><strong>Вывод:</strong> Витамин D достиг оптимального уровня. Поддерживать 2000–3000 МЕ/сут.</div>
 
-    <!-- ==================== KEY CONCLUSIONS ==================== -->
+    <!-- ВЫВОДЫ -->
     <div class="section-title">🔴 Ключевые выводы <span>Шпаргалка для врача</span></div>
     <ul style="line-height: 1.7; font-size: 0.95rem; padding-left: 1.2rem;">
         <li>✅ Анемии нет. Гемоглобин 167 г/л, эритропоэз активный.</li>
@@ -305,7 +287,7 @@
         <li>✅ Алкоголь исключён – дало положительную динамику.</li>
     </ul>
 
-    <!-- ==================== PLAN ==================== -->
+    <!-- ПЛАН -->
     <div class="section-title">📋 План действий <span>Следующие шаги</span></div>
     <div class="table-wrapper">
         <table>
